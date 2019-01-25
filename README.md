@@ -1,3 +1,3 @@
-#Flask Blog 
+# Flask Blog 
 
-###Practicing flask and python for backend
+### Practicing flask and python for backend
