@@ -1,3 +1,4 @@
+from flaskblog.users.routes import usersapp.register_blueprint(users)
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -21,6 +22,12 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER')
 app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS')
 mail = Mail(app)
-from flaskblog import routes
 
+from flaskblog.users.routes import users
+from flaskblog.posts.routes import posts
+from flaskblog.main.routes import main
+
+app.register_blueprint(users)
+app.register_blueprint(posts)
+app.register_blueprint(main)
 
