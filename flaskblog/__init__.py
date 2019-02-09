@@ -1,4 +1,4 @@
-from flaskblog.users.routes import usersapp.register_blueprint(users)
+# from flaskblog.users.routes import usersapp.register_blueprint(users)
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -14,7 +14,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
 app.config['MAIL_SERVER'] = 'stmp.googlemail.com'
 app.config['MAIL_PORT'] = 587
